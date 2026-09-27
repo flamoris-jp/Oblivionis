@@ -10,6 +10,8 @@ Do not implement behavior from chat context alone. Preserve the distinction betw
 
 Oblivionis is intended to be callable by an AI runtime in a model-like position, but it is not an LLM and should not be forced into token-prediction or chat-oriented abstractions.
 
+Its central goal is experience-dependent behavior: an evolving oscillatory state produces firing responses that a runtime can use as the basis for bounded fluctuation in execution. Do not reduce this to a memory lookup, independent random noise, or only a Workflow-start trigger. This integration remains planned.
+
 ### This repository owns
 
 Planned ownership:
@@ -18,6 +20,7 @@ Planned ownership:
 - oscillator/state dynamics;
 - resonance and coupling;
 - fluctuation and bounded stochastic variation;
+- model-level firing responses and state-derived modulation signals;
 - fatigue / habituation and homeostatic dynamics;
 - forgetting transitions;
 - model-state snapshots;
@@ -30,7 +33,7 @@ Planned ownership:
 Do not absorb authority from neighboring systems:
 
 - agent identity, conversation, goals, and personality belong to agent-layer systems;
-- workflow scheduling and orchestration belong to AI Runtime;
+- workflow scheduling, orchestration, and application of modulation belong to AI Runtime;
 - media generation remains owned by its relevant model/service;
 - external asset lifecycle belongs to the system that owns those assets;
 - semantic meaning must not be collapsed into a raw external-data pointer.
@@ -67,6 +70,8 @@ Recall may reintroduce only part of a prior state and may combine with the curre
 
 Preserve room for both semantic-association recall and non-semantic resonance recall.
 
+Recording Max during experience is passive reference capture. **Using Max for resonance search and percentage reactivation applies after storage in Profundumis, in association/recall mode.** Do not use retained Max to amplify normal stimuli, continuously restore the Active Field, or drive ordinary firing/trigger thresholds. After recall, ordinary current-state dynamics resume. See [Max-relative recall](docs/MAX_RECALL.md) and [#4](https://github.com/flamoris-jp/Oblivionis/issues/4).
+
 ### 5. Pointer and meaning are separate
 
 A memory entry may reference external data through a stable pointer or identifier.
@@ -92,6 +97,14 @@ Oblivionis may produce state signals, recalled traces, biases, or model outputs 
 
 It must not silently bypass AI Runtime authorization, workflow, resource, or effect boundaries.
 
+### 8. Firing, modulation, and triggering are distinct
+
+- Firing is a model-level response arising from the current, history-shaped field. It does not assert biological fidelity or require a particular spiking-neural-network architecture.
+- Modulation uses firing-derived signals to introduce bounded fluctuation into runtime behavior, potentially at supported points of an existing execution.
+- A trigger requests new work only when a registered runtime condition is met. Not every firing or recall must start work.
+
+Oblivionis owns its state and emitted responses. Runtime owns the mapping, supported control points, application timing, limits, and execution decisions. Do not freeze signal schemas or sampling/control algorithms through documentation wording alone. Camera/microphone adapters and trigger integration remain separate from Profundumis recall, as tracked in [#3](https://github.com/flamoris-jp/Oblivionis/issues/3) and [#4](https://github.com/flamoris-jp/Oblivionis/issues/4).
+
 ## Experiment discipline
 
 Experiments should make behavior observable and falsifiable.
@@ -106,6 +119,8 @@ Where practical:
 - keep generated large media artifacts out of source control unless they are intentionally reviewed assets.
 
 Do not promote an experimental parameter or domain-specific mechanism into the stable model contract solely because one demo produced interesting behavior.
+
+Future modulation experiments should compare the same probe input and controlled randomness after different histories. Record model responses separately from runtime-applied modulation and downstream behavior. A differing random seed alone is not evidence of experience-dependent behavior.
 
 ## Implementation language
 
@@ -123,7 +138,8 @@ Conceptually, AI Runtime may:
 - advance or sample model state;
 - request observation;
 - request snapshot / forgetting / recall operations;
-- receive bounded state-derived outputs.
+- receive bounded firing/state-derived outputs;
+- apply those outputs through explicit modulation mappings, separately from conditions that request new work.
 
 AI Runtime remains responsible for scheduling, workflow semantics, capability permissions, resource policy, and downstream actions.
 
