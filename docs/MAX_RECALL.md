@@ -87,3 +87,26 @@ be distinguishable in the experimental record. Do not require a monotone final
 response merely because the initialization ratio is monotone.
 
 See [Phase A plan](PHASE_A_PLAN.md) and [model concept](MODEL.md).
+
+## Active recording versus latent use
+
+The clarified boundary in [#4](https://github.com/flamoris-jp/Oblivionis/issues/4)
+is explicit: recording a peak during experience is not using Max to drive normal
+activity. Max-state search and percentage reactivation apply to traces **after
+storage in Profundumis**, in an association/recall mode. Normal stimuli and
+trigger thresholds must not use retained Max as an amplification or restoration
+rule. After reactivation, ordinary current-state dynamics resume; the ratio is
+not continuously forced.
+
+Candidate scoring may use the stored peak pattern or a derived signature, but
+must distinguish pattern resonance from raw peak magnitude. A search score is
+not a recall ratio. Read-only latent search must not reactivate every candidate
+or mutate the live field or retained Max. An isolated search field is a possible
+experiment, not a committed implementation.
+
+Tracking: [#1](https://github.com/flamoris-jp/Oblivionis/issues/1) is the umbrella,
+[#6](https://github.com/flamoris-jp/Oblivionis/issues/6) owns A2 core/checkpoints and
+passive capture, and [#4](https://github.com/flamoris-jp/Oblivionis/issues/4) owns A3
+latent search/recall. [#3](https://github.com/flamoris-jp/Oblivionis/issues/3) tracks
+sensor/trigger integration separately. Neither trigger operation nor latent
+recall requires the other to be implemented first.
