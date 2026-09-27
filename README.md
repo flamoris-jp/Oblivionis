@@ -1,8 +1,10 @@
 # Oblivionis
 
-**Oblivionis** is an experimental dynamic state and memory model for AI runtimes.
+**Oblivionis** is an experimental non-LLM dynamic state and memory model exploring **AI behavior that changes with experience**.
 
-It is not an LLM, a generative-media model, or an agent. Instead, it maintains a continuously evolving internal field shaped by oscillation, resonance, fluctuation, fatigue, forgetting, association, and recall.
+Its intended path is: experience changes an oscillatory field; that field produces firing responses; an AI runtime uses those responses to introduce **history-shaped fluctuation into its execution and behavior**. This is more than returning stored memories or starting work when an event occurs.
+
+Oblivionis is not an LLM, a generative-media model, or an agent. Oscillation, resonance, fatigue, forgetting, association, and recall shape the internal state from which those responses emerge. Firing and runtime modulation are design goals, not implemented integration claims.
 
 > The same input does not have to meet the same internal state twice.
 
@@ -10,7 +12,7 @@ It is not an LLM, a generative-media model, or an agent. Instead, it maintains a
 
 **Name:** Oblivionis
 
-**Description:** Dynamic state and memory model for AI runtimes based on oscillation, forgetting, association, and recall.
+**Description:** Experimental non-LLM model for history-shaped firing, runtime modulation, forgetting, and associative recall.
 
 **Status:** experimental
 
@@ -20,7 +22,9 @@ It is not an LLM, a generative-media model, or an agent. Instead, it maintains a
 
 Oblivionis is a **non-LLM AI model** centered on dynamical state rather than token prediction.
 
-Architecturally, it is intended to sit beside callable models such as Vem: something that an AI runtime can invoke as a model capability. Its role, however, is different. Oblivionis does not primarily generate content. It evolves state over time and returns signals, recalled traces, and state changes that can influence later runtime execution.
+Architecturally, it is intended to sit beside callable models such as Vem: something that an AI runtime can invoke as a model capability. Its role, however, is different. Oblivionis does not primarily generate content. It evolves a history-shaped state and is intended to provide firing responses and state-derived signals that the runtime can use to modulate subsequent behavior.
+
+The goal is not merely to add independent random noise or ask an LLM to act differently. Prior experience should change the state from which a response arises, and that response should influence the runtime through an explicit integration boundary.
 
 Early prototypes use coupled oscillatory systems to explore how experience can persist as state, fade through forgetting, reappear through resonance, and influence later behavior.
 
@@ -33,6 +37,7 @@ Oblivionis is intended to own:
 - the evolving **Active Field**;
 - oscillation, resonance, coupling, fatigue, fluctuation, and homeostatic dynamics;
 - state traces produced by experience;
+- model-level firing responses and state-derived signals for runtime modulation;
 - forgetting as a state transition rather than immediate deletion;
 - full or partial model-state snapshots suitable for later reactivation;
 - associative and resonance-based recall;
@@ -46,7 +51,7 @@ Oblivionis does not own:
 - language reasoning or token generation;
 - image, audio, video, or music generation as a domain;
 - agent identity, goals, personality, or conversation history;
-- workflow scheduling or capability execution;
+- workflow scheduling, capability execution, or the runtime's decision to apply a modulation signal;
 - the lifecycle or storage authority of external assets referenced by memory entries;
 - a universal semantic database.
 
@@ -68,15 +73,15 @@ Prototype experiments have already explored:
 - re-emergence of previously active patterns;
 - behavior between literal replay and random variation.
 
-The repository now retains 17 historical Python probe files, supplied compact results, research notes, and six bounded regression tests under [experiments](experiments/README.md). These do not yet implement the domain-neutral core, checkpoint serialization, Max-relative recall initialization, Profundumis, or AI Runtime integration.
+The repository now retains 17 historical Python probe files, supplied compact results, research notes, and six bounded regression tests under [experiments](experiments/README.md). These do not yet implement the domain-neutral core, checkpoint serialization, Max-relative recall initialization, Profundumis, sensor/trigger integration, or firing-derived AI Runtime modulation.
 
 The production model contract, serialization format, runtime API, and implementation language are **not frozen yet**. See the [Phase A plan](docs/PHASE_A_PLAN.md) for A1 experiment preservation, A2 core/state persistence, and A3 latent recall.
 
 ### Where it fits / FLAMORISのどこに属する？
 
-Oblivionis is designed to be callable from **FLAMORIS AI Runtime** while remaining independently understandable as a model.
+Oblivionis is designed to be callable from **FLAMORIS AI Runtime** while remaining independently understandable as a model. Its response signals are intended to feed back into runtime execution through a defined boundary.
 
-Conceptually:
+Conceptually, not an implemented connection:
 
 ~~~text
 AI Agent / Application
@@ -88,15 +93,38 @@ FLAMORIS AI Runtime
         │
         └── Oblivionis
               │
-              ├── Active Field
+              ├── Active Field / firing responses
               ├── Fluctuation
               ├── Association / Recall
               └── Profundumis
+
+Oblivionis firing responses
+        ↓
+runtime-defined modulation mapping
+        ↓
+history-shaped fluctuation in runtime behavior
 ~~~
 
-AI Runtime remains responsible for workflow execution, scheduling, capability boundaries, and orchestration. Oblivionis contributes evolving model state that other runtime steps may observe or use as bounded input.
+AI Runtime remains responsible for execution, scheduling, capability boundaries, and orchestration. Oblivionis owns its model state and responses; Runtime owns where, when, and how a response may influence execution.
 
-See [Model concept](docs/MODEL.md) for the initial conceptual contract.
+See [Model concept](docs/MODEL.md) for the conceptual contract.
+
+## 🌘 Firing, modulation, and triggers
+
+The central goal is **experience → evolving state → firing → runtime fluctuation → changed behavior**.
+
+Here, **firing** names a model-level response arising from the current field. It is a conceptual term, not a claim of biological brain simulation or a commitment to a particular spiking-neural-network implementation.
+
+Keep two uses distinct:
+
+- **Modulation:** a response contributes bounded fluctuation to runtime behavior, including within an already-running execution where the runtime explicitly supports it. It does not require starting a new Workflow.
+- **Trigger:** a response meets a registered condition for requesting new runtime work. Firing does not automatically mean a Workflow starts.
+
+Camera/microphone adapters may supply stimuli, while recalled traces may change the current field from within. Neither every input nor every recollection must fire. Sensor and trigger design is tracked in [#3](https://github.com/flamoris-jp/Oblivionis/issues/3); Profundumis association/recall is tracked separately in [#4](https://github.com/flamoris-jp/Oblivionis/issues/4).
+
+The signal format, modulation mapping, supported execution points, and influence limits still need design and experiments. Do not equate modulation with arbitrary parameter changes, independent random noise, or a permission to execute actions.
+
+**日本語:** Oblivionisは、経験によって変わる振動状態から発火し、その発火をもとにAI Runtimeへ揺らぎを与えて、AIの振る舞いを変えることを目指す非LLMモデル。処理開始のトリガと、実行中の振る舞いへの作用は別の役割として扱う。これらの連携はまだ構想段階であり、音楽実験は本体を観測するための実験装置である。
 
 ## 🌘 Core idea
 
@@ -126,7 +154,7 @@ Active Field changes again
 
 Forgetting is therefore not necessarily deletion.
 
-A state may leave the Active Field while remaining available as a latent trace. Recall also does not have to mean exact restoration: a recalled state may be mixed with the current field and current fluctuation, allowing the past to influence the present without replacing it.
+A state may leave the Active Field while remaining available as a latent trace. Recall also does not have to mean exact restoration: a recalled state may be mixed with the current field and current fluctuation, allowing the past to influence the present without replacing it. That changed present may then affect firing and runtime modulation; recall need not cause an immediate trigger.
 
 ## Profundumis
 
@@ -147,6 +175,8 @@ The semantic relationships around an entry should remain separable from the raw 
 ### Max as the reference for remembering
 
 Retaining **Max** is intended to let a remembering mode initialize a trace at a chosen percentage of its own stored peak, rather than a percentage of its nearly forgotten current value. For example, an initial recalled activation could be `recall_ratio * peak_activation`.
+
+Recording Max during experience is distinct from using it: **Max-state search and percentage reactivation apply after a trace has been stored in Profundumis, during association/recall.** Ordinary activity, firing, and trigger thresholds must not use retained Max as a continuous amplification or restoration rule.
 
 This initial intensity is separate from how the recalled pattern blends into the present. Do not multiply an entire checkpoint, rewind time, or treat 100% as exact restoration. The mechanism is planned, not yet implemented; see [Max-relative recall](docs/MAX_RECALL.md) for the requirement, proposed boundaries, and acceptance experiments.
 
@@ -169,6 +199,7 @@ See [experiment instructions](experiments/README.md), [research notes](experimen
 
 - **State before story.** Expose measurable state rather than inventing semantic explanations for the model.
 - **History changes the present.** Randomness alone is not memory.
+- **Firing is a source of modulation.** Do not reduce the model to a memory lookup or Workflow-start detector.
 - **Forgetting is behavior.** Decay, latent storage, eviction, and extinction are different concepts.
 - **Recall is reconstruction.** Exact replay is only one possible mode.
 - **Pointers and meaning are separate.** External data identity and semantic association must not be conflated.
@@ -187,9 +218,9 @@ Before freezing a production implementation, define and review:
 5. semantic-association and resonance recall modes;
 6. separation between data pointers and semantic relationships;
 7. deterministic seeding and reproducibility;
-8. AI Runtime integration contracts;
+8. firing-response and AI Runtime modulation contracts, distinct from Workflow-start triggers;
 9. bounded observability and serialization;
-10. acceptance experiments that distinguish memory, noise, persistence, forgetting, and recall.
+10. acceptance experiments that distinguish memory, noise, persistence, forgetting, recall, and history-dependent behavioral change.
 
 ## Repository principles
 
