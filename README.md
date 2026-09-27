@@ -1,86 +1,186 @@
-# FLAMORIS Repository Template
+# Oblivionis
 
-Standard repository template for FLAMORIS projects.
+**Oblivionis** is an experimental dynamic state and memory model for AI runtimes.
 
-Use this repository as the starting point for new FLAMORIS repositories. After creating a repository from this template, replace the placeholders in this README with project-specific information and add only the language, runtime, build, and deployment files the project actually needs.
+It is not an LLM, a generative-media model, or an agent. Instead, it maintains a continuously evolving internal field shaped by oscillation, resonance, fluctuation, fatigue, forgetting, association, and recall.
+
+> The same input does not have to meet the same internal state twice.
 
 ## Project
 
-**Name:** `<PROJECT_NAME>`
+**Name:** Oblivionis
 
-**Description:** `<PROJECT_DESCRIPTION>`
+**Description:** Dynamic state and memory model for AI runtimes based on oscillation, forgetting, association, and recall.
 
-**Status:** `<planned | development | stable | meta>`
-
-For repositories in `flamoris-jp`, keep this wording aligned with the organization `development_status` custom property. State implemented behavior separately from planned work. Do not leave a repository looking like a future design after its runtime or product slice has already shipped.
+**Status:** experimental
 
 ## 🧭 Repository identity / このRepositoryは何者？
 
-Replace the placeholders below with short, project-specific statements. Keep them near the top so a human or AI assistant can understand the repository before digging through Issues or source code.
-
 ### What it is / 何者か
 
-`<ONE_OR_TWO_SENTENCE_PROJECT_IDENTITY>`
+Oblivionis is a **non-LLM AI model** centered on dynamical state rather than token prediction.
+
+Architecturally, it is intended to sit beside callable models such as Vem: something that an AI runtime can invoke as a model capability. Its role, however, is different. Oblivionis does not primarily generate content. It evolves state over time and returns signals, recalled traces, and state changes that can influence later runtime execution.
+
+Early prototypes use coupled oscillatory systems to explore how experience can persist as state, fade through forgetting, reappear through resonance, and influence later behavior.
+
+Music has been used as an experimental probe because synchronization, drift, persistence, fatigue, and spontaneous reorganization are easy to hear and measure. **Oblivionis is not a music model.**
 
 ### What it owns / 主な責任範囲
 
-- `<PRIMARY_RESPONSIBILITY_OR_AUTHORITY>`
-- `<SECONDARY_RESPONSIBILITY_IF_NEEDED>`
+Oblivionis is intended to own:
+
+- the evolving **Active Field**;
+- oscillation, resonance, coupling, fatigue, fluctuation, and homeostatic dynamics;
+- state traces produced by experience;
+- forgetting as a state transition rather than immediate deletion;
+- full or partial model-state snapshots suitable for later reactivation;
+- associative and resonance-based recall;
+- **Profundumis**, the latent deep store for states that have faded from the Active Field;
+- model-level contracts for stimulating, advancing, observing, snapshotting, forgetting, and recalling state.
 
 ### What it does not own / 持たない責任
 
-- `<IMPORTANT_NEIGHBORING_RESPONSIBILITY_OWNED_ELSEWHERE>`
+Oblivionis does not own:
 
-Delete this subsection only when there is genuinely no likely ownership confusion.
+- language reasoning or token generation;
+- image, audio, video, or music generation as a domain;
+- agent identity, goals, personality, or conversation history;
+- workflow scheduling or capability execution;
+- the lifecycle or storage authority of external assets referenced by memory entries;
+- a universal semantic database.
+
+External data should be referenced through stable pointers or identifiers. The pointer to data and the meaning associated with that data are intentionally separate concerns.
 
 ### Current status / 現在の状態
 
-`<WHAT_IS_IMPLEMENTED_NOW_AND_WHAT_IS_STILL_PLANNED_OR_UNACCEPTED>`
+**Experimental / research-stage.**
 
-Do not describe planned behavior as shipped, or implemented behavior as merely future design.
+Prototype experiments have already explored:
+
+- coupled oscillatory memory;
+- phase locking and resonance;
+- selective strengthening from input;
+- gradual forgetting after input stops;
+- fluctuation and interruption;
+- habituation / fatigue;
+- homeostatic activity;
+- re-emergence of previously active patterns;
+- behavior between literal replay and random variation.
+
+The production model contract, serialization format, runtime API, and implementation language are **not frozen yet**.
 
 ### Where it fits / FLAMORISのどこに属する？
 
-Start from the [FLAMORIS organization map](https://github.com/flamoris-jp/.github).
+Oblivionis is designed to be callable from **FLAMORIS AI Runtime** while remaining independently understandable as a model.
 
-When relevant, also link the appropriate family map:
+Conceptually:
 
-- 🎨 Windows / Desktop: [FLAMORIS Desktop Ecosystem](https://github.com/flamoris-jp/flamoris-commons/blob/main/docs/desktop-ecosystem.md)
-- 🤖 AI / MCP services: [FLAMORIS AI Ecosystem](https://github.com/flamoris-jp/flamoris-ai/blob/main/docs/ai-ecosystem.md)
+~~~text
+AI Agent / Application
+        │
+        ▼
+FLAMORIS AI Runtime
+        │
+        ├── LLM / Vision / Speech / Generation / Vem / ...
+        │
+        └── Oblivionis
+              │
+              ├── Active Field
+              ├── Fluctuation
+              ├── Association / Recall
+              └── Profundumis
+~~~
 
-The shared repository documentation policy lives in [FLAMORIS Commons](https://github.com/flamoris-jp/flamoris-commons/blob/main/docs/repository-policy.md).
+AI Runtime remains responsible for workflow execution, scheduling, capability boundaries, and orchestration. Oblivionis contributes evolving model state that other runtime steps may observe or use as bounded input.
 
-## 🏷️ GitHub metadata checklist / GitHub表示設定
+See [Model concept](docs/MODEL.md) for the initial conceptual contract.
 
-After creating a repository from this template, configure the GitHub repository metadata as well as the files.
+## 🌘 Core idea
 
-- **Description:** one concise sentence describing the repository's current role.
-- **Topics:** include `flamoris`, then add a small set of useful project/domain/technology topics. Prefer roughly 4–7 intentional topics over filling every slot.
-- **Development status:** set the organization `development_status` custom property and keep it aligned with this README.
-- **Visibility:** choose intentionally; do not expose deployment secrets, private topology, credentials, or private assets by making a repository public.
+A conventional memory system often treats memory as stored records.
 
-Do not use obsolete or speculative Topics to advertise responsibilities the repository does not actually own.
+Oblivionis explores another possibility:
 
-> GitHub repository metadata is not repository file content. When creating from a template, verify these settings explicitly rather than assuming every template setting was inherited. 🐾
+~~~text
+experience
+   ↓
+state changes
+   ↓
+resonance / coupling / fatigue / fluctuation
+   ↓
+Active Field
+   ↓
+fade / forget
+   ↓
+Profundumis
+   ↓
+association or resonance
+   ↓
+partial recall
+   ↓
+Active Field changes again
+~~~
 
-## Getting started
+Forgetting is therefore not necessarily deletion.
 
-Document the real setup, build, test, and run commands for this repository here.
+A state may leave the Active Field while remaining available as a latent trace. Recall also does not have to mean exact restoration: a recalled state may be mixed with the current field and current fluctuation, allowing the past to influence the present without replacing it.
 
-Do not copy commands from another FLAMORIS project unless they have been verified against the current implementation.
+## Profundumis
+
+**Profundumis** is the project name for Oblivionis's deep drawer-like latent store.
+
+The name is intentionally a FLAMORIS coinage rather than standard Latin.
+
+A Profundumis entry may eventually contain:
+
+- an oscillatory/model-state snapshot;
+- temporal metadata;
+- decay and retention metadata;
+- stable pointers to external data;
+- recall hooks or resonance signatures.
+
+The semantic relationships around an entry should remain separable from the raw pointer to the referenced data.
+
+## Design principles
+
+- **State before story.** Expose measurable state rather than inventing semantic explanations for the model.
+- **History changes the present.** Randomness alone is not memory.
+- **Forgetting is behavior.** Decay, latent storage, eviction, and extinction are different concepts.
+- **Recall is reconstruction.** Exact replay is only one possible mode.
+- **Pointers and meaning are separate.** External data identity and semantic association must not be conflated.
+- **Bounded influence.** Runtime integrations define how much Oblivionis may affect downstream execution.
+- **Experiments remain measurable.** Preserve seeds, parameters, and results where practical.
+- **Do not confuse a probe with the model.** Music or other domains may be used to observe the dynamics without defining the model's purpose.
+
+## Repository roadmap
+
+Before freezing a production implementation, define and review:
+
+1. the minimal mathematical state model;
+2. Active Field state and update rules;
+3. snapshot and restoration boundaries;
+4. Profundumis entry format and retention semantics;
+5. semantic-association and resonance recall modes;
+6. separation between data pointers and semantic relationships;
+7. deterministic seeding and reproducibility;
+8. AI Runtime integration contracts;
+9. bounded observability and serialization;
+10. acceptance experiments that distinguish memory, noise, persistence, forgetting, and recall.
 
 ## Repository principles
 
-- Keep the repository focused on one clear responsibility.
-- Treat current code, tests, documentation, and repository configuration as the source of truth.
-- Keep public documentation portable: describe product/runtime contracts without publishing private hostnames, credentials, deployment topology, or machine-specific paths.
-- Prefer explicit boundaries over speculative abstractions.
-- Keep secrets, credentials, tokens, and private data out of source control and logs.
-- Add tests where practical and document externally visible behavior.
-- Inspect existing FLAMORIS shared packages before introducing duplicate infrastructure.
+- Keep Oblivionis usable as an independent model, even while it is developed inside the FLAMORIS ecosystem.
+- Do not turn this repository into an agent, workflow engine, conventional vector database, or media generator.
+- Keep public documentation portable and free of private hostnames, credentials, topology, or machine-specific paths.
+- Do not commit secrets, private data, or unlicensed model/data assets.
+- Prefer explicit experiments and measurable behavior over anthropomorphic claims.
+- Treat current repository code, tests, documentation, and reviewed design decisions as the source of truth.
 - AI-assisted development is welcome; submitted changes still require human review and responsibility.
 
 ## FLAMORIS
+
+Oblivionis is developed within the FLAMORIS ecosystem, but intentionally keeps its own repository name and model identity.
 
 FLAMORIS is open-source software for creative work and AI-native production.
 
