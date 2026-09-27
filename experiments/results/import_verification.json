@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-27",
+  "scope": "A1 import/regression validation, not A2/A3 acceptance",
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "command": "python -m unittest discover -s experiments/tests -v",
+  "tests_run": 6,
+  "result": "passed",
+  "checks": {
+    "source_integrity_and_syntax": 17,
+    "default_versions": {
+      "seed": 0,
+      "steps": 4000,
+      "dt": 0.002,
+      "every_step_exact_state": [
+        "phi",
+        "A",
+        "S",
+        "K",
+        "t",
+        "core_phi"
+      ],
+      "emitted_events": "equal and nonempty"
+    },
+    "seed2_metrics": {
+      "conditions": [
+        "memory",
+        "improv"
+      ],
+      "all_fields_match": true,
+      "float_absolute_relative_tolerance": 1e-12
+    },
+    "random_control": "note count, voice, pitch, velocity and bar membership preserved; time changes; seeded repeatability",
+    "imported_six_seed_summary": "recomputed from stored rows, not fresh six-seed simulations",
+    "extended_bounds": "1000 steps with configured improvisation, finite bounded state"
+  },
+  "not_tested": [
+    "Full six-seed simulation batch",
+    "Alternative stimuli or parameter sweeps",
+    "Rendering, MIDI conformance or audio listening",
+    "Domain-neutral core",
+    "Max-relative initialization",
+    "Checkpoint serialization",
+    "Profundumis and recall",
+    "Runtime integration"
+  ]
+}

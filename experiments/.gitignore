@@ -1,0 +1,21 @@
+outputs/
+__pycache__/
+*.py[cod]
+# Historical scripts write these when run directly; reviewed summaries live in results/.
+**/trace.npz
+**/notes.json
+early/*.gif
+music_baseline/*.wav
+music_baseline/*.mp3
+music_baseline/*.mid
+music_baseline/*.png
+music_baseline/music_results.json
+music_baseline/music_seeds.json
+music_improv/*.wav
+music_improv/*.mp3
+music_improv/*.mid
+music_improv/*.png
+music_improv/music_results.json
+music_improv/music_seeds.json
+music_improv/improv_results.json
+music_improv/improv_seed2.json

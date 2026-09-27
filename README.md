@@ -68,7 +68,9 @@ Prototype experiments have already explored:
 - re-emergence of previously active patterns;
 - behavior between literal replay and random variation.
 
-The production model contract, serialization format, runtime API, and implementation language are **not frozen yet**.
+The repository now retains 17 historical Python probe files, supplied compact results, research notes, and six bounded regression tests under [experiments](experiments/README.md). These do not yet implement the domain-neutral core, checkpoint serialization, Max-relative recall initialization, Profundumis, or AI Runtime integration.
+
+The production model contract, serialization format, runtime API, and implementation language are **not frozen yet**. See the [Phase A plan](docs/PHASE_A_PLAN.md) for A1 experiment preservation, A2 core/state persistence, and A3 latent recall.
 
 ### Where it fits / FLAMORISのどこに属する？
 
@@ -141,6 +143,27 @@ A Profundumis entry may eventually contain:
 - recall hooks or resonance signatures.
 
 The semantic relationships around an entry should remain separable from the raw pointer to the referenced data.
+
+### Max as the reference for remembering
+
+Retaining **Max** is intended to let a remembering mode initialize a trace at a chosen percentage of its own stored peak, rather than a percentage of its nearly forgotten current value. For example, an initial recalled activation could be `recall_ratio * peak_activation`.
+
+This initial intensity is separate from how the recalled pattern blends into the present. Do not multiply an entire checkpoint, rewind time, or treat 100% as exact restoration. The mechanism is planned, not yet implemented; see [Max-relative recall](docs/MAX_RECALL.md) for the requirement, proposed boundaries, and acceptance experiments.
+
+## Experiments / 実験もここで育てる
+
+Experiments are first-class repository contents. Keep code, seeds, parameters, small results and useful failures here as Oblivionis evolves. Historical music probes stay distinct from the domain-neutral reference model. Large regenerated media and private raw logs are not committed by default.
+
+このリポジトリでは、実験コード・結果・失敗の記録も継続して管理する。音楽実験は本体とは分けて残し、将来の変更を比較する基準にする。
+
+For numerical regressions, use a Python 3.13 virtual environment and run from the repository root:
+
+```bash
+python -m pip install -r experiments/requirements-test.txt
+python -m unittest discover -s experiments/tests -v
+```
+
+See [experiment instructions](experiments/README.md), [research notes](experiments/NOTES.md), [source provenance](experiments/provenance.json), and [import validation](experiments/results/import_verification.json). The numerical checks do not validate media rendering or prove future memory/recall capabilities.
 
 ## Design principles
 

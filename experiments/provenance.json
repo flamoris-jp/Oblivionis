@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "imported_on": "2026-09-27",
+  "policy": "Preserve historical algorithms. Two non-executable normalizations are recorded explicitly; original and imported SHA-256 values are retained.",
+  "archives": {
+    "oblivionis.zip": "1308cea214912f89126370ee4b02a87f1b5ea6ad108b9d9a09d8266ce49ce568",
+    "oblivionis_music.zip": "8cc45661debc4b857bd718efcfdb7a72eada44dd079bcfe8d40faf3e542c914e",
+    "oblivionis_music 2.zip": "872773aac7baff08c80244f80ebd39901ec07b4a4bcafcc08d14c062d23247a2"
+  },
+  "sources": [
+    {
+      "path": "experiments/early/oblivionis_v01_visual.py",
+      "archive": "oblivionis.zip",
+      "member": "oblivionis/oblivionis_v01_visual.py",
+      "sha256": "cf282165006cd9743e8f9f8b14f5fd02262eb9cfc4a4c4d63ce7dc2871e230b5",
+      "original_sha256": "cf282165006cd9743e8f9f8b14f5fd02262eb9cfc4a4c4d63ce7dc2871e230b5"
+    },
+    {
+      "path": "experiments/early/oblivionis_v02_wave_visual.py",
+      "archive": "oblivionis.zip",
+      "member": "oblivionis/oblivionis_v02_wave_visual.py",
+      "sha256": "70954319efe457eccb92b8e80c0e60dd29df41f2e41502ce8794baa27c20be5c",
+      "original_sha256": "70954319efe457eccb92b8e80c0e60dd29df41f2e41502ce8794baa27c20be5c"
+    },
+    {
+      "path": "experiments/early/oblivionis_v03_interference.py",
+      "archive": "oblivionis.zip",
+      "member": "oblivionis/oblivionis_v03_interference.py",
+      "sha256": "765e892d4231c4579f1e7ae153ae405093b24801b79aaa0408129360bd241364",
+      "original_sha256": "765e892d4231c4579f1e7ae153ae405093b24801b79aaa0408129360bd241364"
+    },
+    {
+      "path": "experiments/early/oblivionis_v04_peak_search.py",
+      "archive": "oblivionis.zip",
+      "member": "oblivionis/oblivionis_v04_peak_search.py",
+      "sha256": "e104e8bcd680bff91a4b58664eb9007c11ea163ec08c38e8119e75d8dc3911a4",
+      "original_sha256": "e104e8bcd680bff91a4b58664eb9007c11ea163ec08c38e8119e75d8dc3911a4"
+    },
+    {
+      "path": "experiments/early/v00.py",
+      "archive": "oblivionis.zip",
+      "member": "oblivionis/v00.py",
+      "sha256": "ec5294164ff17368e65a26880bce65d6fff29603a5beb72f804c9044abde22b5",
+      "original_sha256": "9f88d28f9d848504ed1216e3d5d3f1d8b2866536f4e56538fc6d0079b290f401",
+      "normalization": "Append final newline only."
+    },
+    {
+      "path": "experiments/music_baseline/music_field.py",
+      "archive": "oblivionis_music.zip",
+      "member": "music_field.py",
+      "sha256": "8534f96579c67f097081a08ca9082fa7086ed90d49060ec2e03deed349b6b9dc",
+      "original_sha256": "a713e2e05b9254a946fef68ecff3d369c18dfd00458663a1468059224699815a",
+      "normalization": "Expand the resonance_gain comment from (× S) to (存在強度 S に比例); executable code unchanged."
+    },
+    {
+      "path": "experiments/music_baseline/plot_session.py",
+      "archive": "oblivionis_music.zip",
+      "member": "plot_session.py",
+      "sha256": "a8a0e43739042e3be3244d48ae35ae3593f693d75bd3c611351e9099195dbab7",
+      "original_sha256": "a8a0e43739042e3be3244d48ae35ae3593f693d75bd3c611351e9099195dbab7"
+    },
+    {
+      "path": "experiments/music_baseline/seeds.py",
+      "archive": "oblivionis_music.zip",
+      "member": "seeds.py",
+      "sha256": "955ace78992e56ba137b323bf398cc7548f8841bfb98753c510cc4ed79acb984",
+      "original_sha256": "955ace78992e56ba137b323bf398cc7548f8841bfb98753c510cc4ed79acb984"
+    },
+    {
+      "path": "experiments/music_baseline/session.py",
+      "archive": "oblivionis_music.zip",
+      "member": "session.py",
+      "sha256": "d009df8b674a5fa78283101ac2b4dbe68d6038db319b98b868ead9220ad40bba",
+      "original_sha256": "d009df8b674a5fa78283101ac2b4dbe68d6038db319b98b868ead9220ad40bba"
+    },
+    {
+      "path": "experiments/music_baseline/tune.py",
+      "archive": "oblivionis_music.zip",
+      "member": "tune.py",
+      "sha256": "108b95209259c5404e431302c237df9720905ae98bc24dc25925f9ebcd81930f",
+      "original_sha256": "108b95209259c5404e431302c237df9720905ae98bc24dc25925f9ebcd81930f"
+    },
+    {
+      "path": "experiments/music_improv/improv.py",
+      "archive": "oblivionis_music 2.zip",
+      "member": "improv.py",
+      "sha256": "a8dbdb1d3341d30164a62d05db12cf542d309654dee0d6d04c04974d606238fa",
+      "original_sha256": "a8dbdb1d3341d30164a62d05db12cf542d309654dee0d6d04c04974d606238fa"
+    },
+    {
+      "path": "experiments/music_improv/music_field.py",
+      "archive": "oblivionis_music 2.zip",
+      "member": "music_field.py",
+      "sha256": "944c1c2f60eb3b993a9067de3520af70d02fa696736aae11f8848f4d857e7855",
+      "original_sha256": "944c1c2f60eb3b993a9067de3520af70d02fa696736aae11f8848f4d857e7855"
+    },
+    {
+      "path": "experiments/music_improv/plot_session.py",
+      "archive": "oblivionis_music 2.zip",
+      "member": "plot_session.py",
+      "sha256": "a8a0e43739042e3be3244d48ae35ae3593f693d75bd3c611351e9099195dbab7",
+      "original_sha256": "a8a0e43739042e3be3244d48ae35ae3593f693d75bd3c611351e9099195dbab7"
+    },
+    {
+      "path": "experiments/music_improv/render_improv.py",
+      "archive": "oblivionis_music 2.zip",
+      "member": "render_improv.py",
+      "sha256": "d40787d6c61aec2139e92c9266ab3cdc1dc5bab2c7ac62c95ad71091a4cfa77d",
+      "original_sha256": "d40787d6c61aec2139e92c9266ab3cdc1dc5bab2c7ac62c95ad71091a4cfa77d"
+    },
+    {
+      "path": "experiments/music_improv/seeds.py",
+      "archive": "oblivionis_music 2.zip",
+      "member": "seeds.py",
+      "sha256": "955ace78992e56ba137b323bf398cc7548f8841bfb98753c510cc4ed79acb984",
+      "original_sha256": "955ace78992e56ba137b323bf398cc7548f8841bfb98753c510cc4ed79acb984"
+    },
+    {
+      "path": "experiments/music_improv/session.py",
+      "archive": "oblivionis_music 2.zip",
+      "member": "session.py",
+      "sha256": "d009df8b674a5fa78283101ac2b4dbe68d6038db319b98b868ead9220ad40bba",
+      "original_sha256": "d009df8b674a5fa78283101ac2b4dbe68d6038db319b98b868ead9220ad40bba"
+    },
+    {
+      "path": "experiments/music_improv/tune.py",
+      "archive": "oblivionis_music 2.zip",
+      "member": "tune.py",
+      "sha256": "108b95209259c5404e431302c237df9720905ae98bc24dc25925f9ebcd81930f",
+      "original_sha256": "108b95209259c5404e431302c237df9720905ae98bc24dc25925f9ebcd81930f"
+    }
+  ]
+}
